@@ -69,16 +69,17 @@
 
 
 
-<meta name="description" content="日常学习">
-<meta property="og:type" content="website">
+<meta name="description" content="百度地图SDK集成android项目*日记日常开发过程中经常有需要实现地图功能，而通常的做法是集成第三方现成的SDK（百度地图、高德地图）。 所以在这里基于百度地图SDK集成，写一篇文档记录一下地图开发。 步骤如下：一、环境准备1、在百度地图开发者平台注册账号，下载百度SDK，填入预编译项目相关的密钥，获取集成所需的key_value;2、将SDK依赖如项目模块，设置相应的权限。 More in">
+<meta property="og:type" content="article">
 <meta property="og:title" content="小白note">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/百度地图学习总结/index.html">
 <meta property="og:site_name" content="小白note">
-<meta property="og:description" content="日常学习">
+<meta property="og:description" content="百度地图SDK集成android项目*日记日常开发过程中经常有需要实现地图功能，而通常的做法是集成第三方现成的SDK（百度地图、高德地图）。 所以在这里基于百度地图SDK集成，写一篇文档记录一下地图开发。 步骤如下：一、环境准备1、在百度地图开发者平台注册账号，下载百度SDK，填入预编译项目相关的密钥，获取集成所需的key_value;2、将SDK依赖如项目模块，设置相应的权限。 More in">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-22T14:16:33.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小白note">
-<meta name="twitter:description" content="日常学习">
+<meta name="twitter:description" content="百度地图SDK集成android项目*日记日常开发过程中经常有需要实现地图功能，而通常的做法是集成第三方现成的SDK（百度地图、高德地图）。 所以在这里基于百度地图SDK集成，写一篇文档记录一下地图开发。 步骤如下：一、环境准备1、在百度地图开发者平台注册账号，下载百度SDK，填入预编译项目相关的密钥，获取集成所需的key_value;2、将SDK依赖如项目模块，设置相应的权限。 More in">
 
 
 
@@ -108,13 +109,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/22/百度地图学习总结/"/>
 
 
 
 
 
-  <title>小白note</title>
+  <title> | 小白note</title>
   
 
 
@@ -133,8 +134,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -279,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/22/百度地图学习总结/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -331,9 +329,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <h2 id="百度地图SDK集成android项目-日记"><a href="#百度地图SDK集成android项目-日记" class="headerlink" title="百度地图SDK集成android项目*日记"></a>百度地图SDK集成android项目*日记</h2><p>日常开发过程中经常有需要实现地图功能，而通常的做法是集成第三方现成的SDK（百度地图、高德地图）。 所以在这里基于百度地图SDK集成，写一篇文档记录一下地图开发。</p>
 <h2 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h2><h3 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h3><p>1、在<a href="http://lbsyun.baidu.com/" target="_blank" rel="external">百度地图开发者平台</a>注册账号，下载百度SDK，填入预编译项目相关的密钥，获取集成所需的key_value;<br><br>2、将SDK依赖如项目模块，设置相应的权限。</p>
 <p>More info: <a href="http://lbsyun.baidu.com/index.php?title=androidsdk" target="_blank" rel="external">参考百度地图</a></p>
@@ -341,8 +337,6 @@
 <p>MapStatus: Map状态配置<br><br><figure class="highlight plain"><figcaption><span>builder </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">builder.setTarget(center).zoom(zoom)</div></pre></td></tr></table></figure></p>
 <p>设置个性化地图：<br><br><code>MapView.setMapCustomEnable(true or false);</code></p>
 <h3 id="三、基于MapFragment的基本地图"><a href="#三、基于MapFragment的基本地图" class="headerlink" title="三、基于MapFragment的基本地图"></a>三、基于MapFragment的基本地图</h3><h3 id="四、多地图展示"><a href="#四、多地图展示" class="headerlink" title="四、多地图展示"></a>四、多地图展示</h3><h3 id="五、图层展示"><a href="#五、图层展示" class="headerlink" title="五、图层展示"></a>五、图层展示</h3><h3 id="六、地图操作功能"><a href="#六、地图操作功能" class="headerlink" title="六、地图操作功能"></a>六、地图操作功能</h3><h3 id="七、UI控制功能"><a href="#七、UI控制功能" class="headerlink" title="七、UI控制功能"></a>七、UI控制功能</h3><h3 id="八、定位图层展示"><a href="#八、定位图层展示" class="headerlink" title="八、定位图层展示"></a>八、定位图层展示</h3><h3 id="九、自定义绘制功能"><a href="#九、自定义绘制功能" class="headerlink" title="九、自定义绘制功能"></a>九、自定义绘制功能</h3><h3 id="十、点收藏功能"><a href="#十、点收藏功能" class="headerlink" title="十、点收藏功能"></a>十、点收藏功能</h3><h3 id="十一、周边雷达功能"><a href="#十一、周边雷达功能" class="headerlink" title="十一、周边雷达功能"></a>十一、周边雷达功能</h3><h3 id="十二、覆盖物功能"><a href="#十二、覆盖物功能" class="headerlink" title="十二、覆盖物功能"></a>十二、覆盖物功能</h3><h3 id="十三、POI搜索功能"><a href="#十三、POI搜索功能" class="headerlink" title="十三、POI搜索功能"></a>十三、POI搜索功能</h3><h3 id="十四、路径规划功能"><a href="#十四、路径规划功能" class="headerlink" title="十四、路径规划功能"></a>十四、路径规划功能</h3><h3 id="十五、地理编码功能"><a href="#十五、地理编码功能" class="headerlink" title="十五、地理编码功能"></a>十五、地理编码功能</h3><h3 id="十六、公交线路查询功能"><a href="#十六、公交线路查询功能" class="headerlink" title="十六、公交线路查询功能"></a>十六、公交线路查询功能</h3><h3 id="十七、离线地图功能"><a href="#十七、离线地图功能" class="headerlink" title="十七、离线地图功能"></a>十七、离线地图功能</h3><h3 id="十八、LBS-云检索功能"><a href="#十八、LBS-云检索功能" class="headerlink" title="十八、LBS.云检索功能"></a>十八、LBS.云检索功能</h3><h3 id="十九、热力图功能"><a href="#十九、热力图功能" class="headerlink" title="十九、热力图功能"></a>十九、热力图功能</h3><h3 id="二十、OpenGL绘制功能"><a href="#二十、OpenGL绘制功能" class="headerlink" title="二十、OpenGL绘制功能"></a>二十、OpenGL绘制功能</h3><h3 id="二十一、点聚合功能"><a href="#二十一、点聚合功能" class="headerlink" title="二十一、点聚合功能"></a>二十一、点聚合功能</h3><h3 id="二十二、瓦片图功能"><a href="#二十二、瓦片图功能" class="headerlink" title="二十二、瓦片图功能"></a>二十二、瓦片图功能</h3><h3 id="二十三、行政区域检索"><a href="#二十三、行政区域检索" class="headerlink" title="二十三、行政区域检索"></a>二十三、行政区域检索</h3><h3 id="二十四、室内图"><a href="#二十四、室内图" class="headerlink" title="二十四、室内图"></a>二十四、室内图</h3><h3 id="二十五、室内图检索"><a href="#二十五、室内图检索" class="headerlink" title="二十五、室内图检索"></a>二十五、室内图检索</h3><h3 id="二十六、短串分享功能"><a href="#二十六、短串分享功能" class="headerlink" title="二十六、短串分享功能"></a>二十六、短串分享功能</h3>
-          
-        
       
     </div>
     
@@ -359,12 +353,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -374,10 +368,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -385,6 +380,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -405,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">zhy</p>
@@ -449,6 +457,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度地图SDK集成android项目-日记"><span class="nav-number">1.</span> <span class="nav-text">百度地图SDK集成android项目*日记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤如下："><span class="nav-number">2.</span> <span class="nav-text">步骤如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、环境准备"><span class="nav-number">2.1.</span> <span class="nav-text">一、环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基础地图"><span class="nav-number">2.2.</span> <span class="nav-text">二、基础地图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基础知识："><span class="nav-number">2.2.0.1.</span> <span class="nav-text">基础知识：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、基于MapFragment的基本地图"><span class="nav-number">2.3.</span> <span class="nav-text">三、基于MapFragment的基本地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、多地图展示"><span class="nav-number">2.4.</span> <span class="nav-text">四、多地图展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、图层展示"><span class="nav-number">2.5.</span> <span class="nav-text">五、图层展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、地图操作功能"><span class="nav-number">2.6.</span> <span class="nav-text">六、地图操作功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、UI控制功能"><span class="nav-number">2.7.</span> <span class="nav-text">七、UI控制功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、定位图层展示"><span class="nav-number">2.8.</span> <span class="nav-text">八、定位图层展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、自定义绘制功能"><span class="nav-number">2.9.</span> <span class="nav-text">九、自定义绘制功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十、点收藏功能"><span class="nav-number">2.10.</span> <span class="nav-text">十、点收藏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十一、周边雷达功能"><span class="nav-number">2.11.</span> <span class="nav-text">十一、周边雷达功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十二、覆盖物功能"><span class="nav-number">2.12.</span> <span class="nav-text">十二、覆盖物功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十三、POI搜索功能"><span class="nav-number">2.13.</span> <span class="nav-text">十三、POI搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十四、路径规划功能"><span class="nav-number">2.14.</span> <span class="nav-text">十四、路径规划功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十五、地理编码功能"><span class="nav-number">2.15.</span> <span class="nav-text">十五、地理编码功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十六、公交线路查询功能"><span class="nav-number">2.16.</span> <span class="nav-text">十六、公交线路查询功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十七、离线地图功能"><span class="nav-number">2.17.</span> <span class="nav-text">十七、离线地图功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十八、LBS-云检索功能"><span class="nav-number">2.18.</span> <span class="nav-text">十八、LBS.云检索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十九、热力图功能"><span class="nav-number">2.19.</span> <span class="nav-text">十九、热力图功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十、OpenGL绘制功能"><span class="nav-number">2.20.</span> <span class="nav-text">二十、OpenGL绘制功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十一、点聚合功能"><span class="nav-number">2.21.</span> <span class="nav-text">二十一、点聚合功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十二、瓦片图功能"><span class="nav-number">2.22.</span> <span class="nav-text">二十二、瓦片图功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十三、行政区域检索"><span class="nav-number">2.23.</span> <span class="nav-text">二十三、行政区域检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十四、室内图"><span class="nav-number">2.24.</span> <span class="nav-text">二十四、室内图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十五、室内图检索"><span class="nav-number">2.25.</span> <span class="nav-text">二十五、室内图检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二十六、短串分享功能"><span class="nav-number">2.26.</span> <span class="nav-text">二十六、短串分享功能</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
