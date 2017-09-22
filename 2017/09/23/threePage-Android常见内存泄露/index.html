@@ -69,16 +69,17 @@
 
 
 
-<meta name="description" content="日常学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小白学习计划">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="一、内存泄露的产生原因： 在Android程序开发中，当一个对象已经不需要再使用了，本该被回收时，而另外一个正在使用的对象持有它的引用从而导致它不能被回收，这就导致本该被回收的对象不能被回收而停留在堆内存中，内存泄漏就产生了。  二、java 引用的分类： 分为4种：强引用、软引用、弱引用和虚引用。java jdk提供了三个专门的类，分别对应关系是：SoftReference—软引用；WeakRe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="threePage_Android常见内存泄露">
+<meta property="og:url" content="http://yoursite.com/2017/09/23/threePage-Android常见内存泄露/index.html">
 <meta property="og:site_name" content="小白学习计划">
-<meta property="og:description" content="日常学习">
+<meta property="og:description" content="一、内存泄露的产生原因： 在Android程序开发中，当一个对象已经不需要再使用了，本该被回收时，而另外一个正在使用的对象持有它的引用从而导致它不能被回收，这就导致本该被回收的对象不能被回收而停留在堆内存中，内存泄漏就产生了。  二、java 引用的分类： 分为4种：强引用、软引用、弱引用和虚引用。java jdk提供了三个专门的类，分别对应关系是：SoftReference—软引用；WeakRe">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-22T16:50:53.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小白学习计划">
-<meta name="twitter:description" content="日常学习">
+<meta name="twitter:title" content="threePage_Android常见内存泄露">
+<meta name="twitter:description" content="一、内存泄露的产生原因： 在Android程序开发中，当一个对象已经不需要再使用了，本该被回收时，而另外一个正在使用的对象持有它的引用从而导致它不能被回收，这就导致本该被回收的对象不能被回收而停留在堆内存中，内存泄漏就产生了。  二、java 引用的分类： 分为4种：强引用、软引用、弱引用和虚引用。java jdk提供了三个专门的类，分别对应关系是：SoftReference—软引用；WeakRe">
 
 
 
@@ -108,13 +109,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/23/threePage-Android常见内存泄露/"/>
 
 
 
 
 
-  <title>小白学习计划</title>
+  <title>threePage_Android常见内存泄露 | 小白学习计划</title>
   
 
 
@@ -133,8 +134,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,9 +267,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -299,9 +299,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/threePage-Android常见内存泄露/" itemprop="url">threePage_Android常见内存泄露</a></h2>
+          <h2 class="post-title" itemprop="name headline">threePage_Android常见内存泄露</h2>
         
 
         <div class="post-meta">
@@ -351,9 +349,7 @@
       
 
       
-        
-          
-            <h3 id="一、内存泄露的产生原因："><a href="#一、内存泄露的产生原因：" class="headerlink" title="一、内存泄露的产生原因："></a>一、内存泄露的产生原因：<br></h3><blockquote>
+        <h3 id="一、内存泄露的产生原因："><a href="#一、内存泄露的产生原因：" class="headerlink" title="一、内存泄露的产生原因："></a>一、内存泄露的产生原因：<br></h3><blockquote>
 <p>在Android程序开发中，当一个对象已经不需要再使用了，本该被回收时，而另外一个正在使用的对象持有它的引用从而导致它不能被回收，这就导致本该被回收的对象不能被回收而停留在堆内存中，内存泄漏就产生了。</p>
 </blockquote>
 <h3 id="二、java-引用的分类："><a href="#二、java-引用的分类：" class="headerlink" title="二、java 引用的分类："></a>二、java 引用的分类：<br></h3><blockquote>
@@ -363,8 +359,6 @@
 <p>1、不规范的单例<br><br>单例是我们在平时做开发的时候经常用的设计模式，但其静态特性会导致其单例对象的生命周期和应用的生命周期一样长，用到Context这个属性时尤其需要注意。context有两种类型：activity的context(这个context跟当前acitvity是关联的)和application的context(该context属于全局的，只跟应用本身关联)。如果单例对象传入的是activity的context,在该activity退出时，而当前单例还在使用的情况，当前单例对象里面的context持有已退出的activity引用，会导致activity内存无法回收。如果需要传入context，最好传入application里面的context对象。<br><br>2、非静态的内部类创建静态实例<br><br>非静态内部类默认持有外部类的引用，而用该内部类创建的静态实例却和应用的生命周期一样长，会导致外部类的内存资源一直无法正常回收。正确的做法：将该内部类改为静态内部类，或者将该内部类抽取封装成一单例。<br><br>3、Handler的使用<br><br>平时我们经常用Handler来处理耗时操作传值，一般情况下都是直接用的非静态Handler对象，这样做会导致当前的activity在消息队列在loop线程里面轮询的情况下无法正常回收内存。建议采用封装一个Handler静态内部类，采用弱引用的方式去实例化当前activity对象。弱引用可以正常通过系统gcc来回收内存，不会内存泄露。<br><br>不过loop线程里面可能还有未执行的待发消息，建议在onDestroy或者onStop里面移除这些消息。<br><br>4、线程造成的内存泄露<br><br>无论是AsynTask还是Thread，在用作内部类来进行操作时，遇到线程任务没结束，都会持有外部类引用，造成外部类无法正常回收内存。建议使用静态的内部类。基于节约系统资源的目的，主动取消不需要继续执行的任务线程。<br><br>5、资源未关闭</p>
 </blockquote>
 
-          
-        
       
     </div>
     
@@ -381,137 +375,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/twoPage-Android性能优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiqee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小白学习计划">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/twoPage-Android性能优化/" itemprop="url">twoPage_Android性能优化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T00:14:03+08:00">
-                2017-09-23
-              </time>
+              <a href="/2017/09/23/twoPage-Android性能优化/" rel="next" title="twoPage_Android性能优化">
+                <i class="fa fa-chevron-left"></i> twoPage_Android性能优化
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>1、根据UI效果图，能用相对布局搞定的就用相对布局，可以减少多尺寸设备适配工作量。在用到线性布局的情况下，非必要情况慎用layout_weight属性。layout_weight属性会onMesure两次，影响绘制速度。</p>
-<p>2、坚持宽而浅原则：<br>能少用布局嵌套就少用布局嵌套，方便提高布局解析速度。活用<include>或者<merge>，使用<include>会自动忽略<merge>这个层级。</merge></include></merge></include></p>
-<p>3、lint原则：<br>使用compound drawables - 一个包含了ImageView与TextView的LinearLayout可以被当作一个compound drawable来处理。<br>使用merge根框架 - 如果FramLayout仅仅是一个纯粹的（没有设置背景，间距等）布局根元素，我们可以使用merge标签来当作根标签。<br>无用的分支 - 如果一个layout并没有任何子组件，那么可以被移除，这样可以提高效率。<br>无用的父控件 - 如果一个layout只有子控件，没有兄弟控件，并且不是一个ScrollView或者根节点，而且没有设置背景，那么我们可以移除这个父控件，直接把子控件提升为父控件】<br>深层次的layout - 尽量减少内嵌的层级，考虑使用更多平级的组件 RelativeLayout or GridLayout来提升布局性能，默认最大的深度是10。</p>
-<p>4、抽取公共布局或者控件，集成style属性。</p>
-<p>5、懒加载View 标记—viewstub<br>ViewStub是一个轻量级的view，没有占有空间，没有花费draw的资源，也没有参与在任何一个layout的计算与绘制里面。创建它仅需要很少的系统资源，而且存留在View的层级也是个比较不花费资源的动作。每一个ViewStub简单的包含一个android:layout的属性来指定待创建的布局文件。载用方式：setVisibility(View.VISIBLE) 或者是调用 inflate()。</p>
-<p>6、针对listview来说，用viewholder设计模式可以有效减少频繁地findbyId操作，设置tag标记，方便查询。 </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -521,135 +406,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/onePage-baiduMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiqee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小白学习计划">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/22/onePage-baiduMap/" itemprop="url">百度地图SDK集成android项目*日记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T22:45:02+08:00">
-                2017-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>日常开发过程中经常有需要实现地图功能，而通常的做法是集成第三方现成的SDK（百度地图、高德地图）。 所以在这里基于百度地图SDK集成，写一篇文档记录一下地图开发。</p>
-<h2 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h2><h3 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h3><p>1、在<a href="http://lbsyun.baidu.com/" target="_blank" rel="external">百度地图开发者平台</a>注册账号，下载百度SDK，填入预编译项目相关的密钥，获取集成所需的key_value;<br><br>2、将SDK依赖如项目模块，设置相应的权限。</p>
-<p>More info: <a href="http://lbsyun.baidu.com/index.php?title=androidsdk" target="_blank" rel="external">参考百度地图</a></p>
-<h3 id="二、基础地图"><a href="#二、基础地图" class="headerlink" title="二、基础地图"></a>二、基础地图</h3><h5 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：<br></h5><p>LatLng: 坐标<br><br><figure class="highlight plain"><figcaption><span>center </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```&lt;br&gt;</div><div class="line"></div><div class="line">维度度量：</div><div class="line">``` int zoom = 11.0f;</div></pre></td></tr></table></figure></p>
-<p>MapStatus: Map状态配置<br><br><figure class="highlight plain"><figcaption><span>builder </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">builder.setTarget(center).zoom(zoom)</div></pre></td></tr></table></figure></p>
-<p>设置个性化地图：<br><br><code>MapView.setMapCustomEnable(true or false);</code></p>
-<h3 id="三、基于MapFragment的基本地图"><a href="#三、基于MapFragment的基本地图" class="headerlink" title="三、基于MapFragment的基本地图"></a>三、基于MapFragment的基本地图</h3><h3 id="四、多地图展示"><a href="#四、多地图展示" class="headerlink" title="四、多地图展示"></a>四、多地图展示</h3><h3 id="五、图层展示"><a href="#五、图层展示" class="headerlink" title="五、图层展示"></a>五、图层展示</h3><h3 id="六、地图操作功能"><a href="#六、地图操作功能" class="headerlink" title="六、地图操作功能"></a>六、地图操作功能</h3><h3 id="七、UI控制功能"><a href="#七、UI控制功能" class="headerlink" title="七、UI控制功能"></a>七、UI控制功能</h3><h3 id="八、定位图层展示"><a href="#八、定位图层展示" class="headerlink" title="八、定位图层展示"></a>八、定位图层展示</h3><h3 id="九、自定义绘制功能"><a href="#九、自定义绘制功能" class="headerlink" title="九、自定义绘制功能"></a>九、自定义绘制功能</h3><h3 id="十、点收藏功能"><a href="#十、点收藏功能" class="headerlink" title="十、点收藏功能"></a>十、点收藏功能</h3><h3 id="十一、周边雷达功能"><a href="#十一、周边雷达功能" class="headerlink" title="十一、周边雷达功能"></a>十一、周边雷达功能</h3><h3 id="十二、覆盖物功能"><a href="#十二、覆盖物功能" class="headerlink" title="十二、覆盖物功能"></a>十二、覆盖物功能</h3><h3 id="十三、POI搜索功能"><a href="#十三、POI搜索功能" class="headerlink" title="十三、POI搜索功能"></a>十三、POI搜索功能</h3><h3 id="十四、路径规划功能"><a href="#十四、路径规划功能" class="headerlink" title="十四、路径规划功能"></a>十四、路径规划功能</h3><h3 id="十五、地理编码功能"><a href="#十五、地理编码功能" class="headerlink" title="十五、地理编码功能"></a>十五、地理编码功能</h3><h3 id="十六、公交线路查询功能"><a href="#十六、公交线路查询功能" class="headerlink" title="十六、公交线路查询功能"></a>十六、公交线路查询功能</h3><h3 id="十七、离线地图功能"><a href="#十七、离线地图功能" class="headerlink" title="十七、离线地图功能"></a>十七、离线地图功能</h3><h3 id="十八、LBS-云检索功能"><a href="#十八、LBS-云检索功能" class="headerlink" title="十八、LBS.云检索功能"></a>十八、LBS.云检索功能</h3><h3 id="十九、热力图功能"><a href="#十九、热力图功能" class="headerlink" title="十九、热力图功能"></a>十九、热力图功能</h3><h3 id="二十、OpenGL绘制功能"><a href="#二十、OpenGL绘制功能" class="headerlink" title="二十、OpenGL绘制功能"></a>二十、OpenGL绘制功能</h3><h3 id="二十一、点聚合功能"><a href="#二十一、点聚合功能" class="headerlink" title="二十一、点聚合功能"></a>二十一、点聚合功能</h3><h3 id="二十二、瓦片图功能"><a href="#二十二、瓦片图功能" class="headerlink" title="二十二、瓦片图功能"></a>二十二、瓦片图功能</h3><h3 id="二十三、行政区域检索"><a href="#二十三、行政区域检索" class="headerlink" title="二十三、行政区域检索"></a>二十三、行政区域检索</h3><h3 id="二十四、室内图"><a href="#二十四、室内图" class="headerlink" title="二十四、室内图"></a>二十四、室内图</h3><h3 id="二十五、室内图检索"><a href="#二十五、室内图检索" class="headerlink" title="二十五、室内图检索"></a>二十五、室内图检索</h3><h3 id="二十六、短串分享功能"><a href="#二十六、短串分享功能" class="headerlink" title="二十六、短串分享功能"></a>二十六、短串分享功能</h3>
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -657,6 +418,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -677,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -725,6 +499,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、内存泄露的产生原因："><span class="nav-number">1.</span> <span class="nav-text">一、内存泄露的产生原因：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、java-引用的分类："><span class="nav-number">2.</span> <span class="nav-text">二、java 引用的分类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、常见内存泄露情况："><span class="nav-number">3.</span> <span class="nav-text">三、常见内存泄露情况：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
