@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -69,17 +69,18 @@
 
 
 
-<meta name="description" content="日常学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="1、根据UI效果图，能用相对布局搞定的就用相对布局，可以减少多尺寸设备适配工作量。在用到线性布局的情况下，非必要情况慎用layout_weight属性。layout_weight属性会onMesure两次，影响绘制速度。  2、坚持宽而浅原则： 能少用布局嵌套就少用布局嵌套，方便提高布局解析速度。活用&amp;lt;include /&amp;gt;或者&amp;lt;merge /&amp;gt;，使用&amp;lt;include">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="two_Android性能优化">
+<meta property="og:url" content="http://yoursite.com/2017/09/23/twoPage-Android性能优化/index.html">
 <meta property="og:site_name" content="小白学习计划">
-<meta property="og:description" content="日常学习">
+<meta property="og:description" content="1、根据UI效果图，能用相对布局搞定的就用相对布局，可以减少多尺寸设备适配工作量。在用到线性布局的情况下，非必要情况慎用layout_weight属性。layout_weight属性会onMesure两次，影响绘制速度。  2、坚持宽而浅原则： 能少用布局嵌套就少用布局嵌套，方便提高布局解析速度。活用&amp;lt;include /&amp;gt;或者&amp;lt;merge /&amp;gt;，使用&amp;lt;include">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-21T04:09:46.639Z">
+<meta property="og:updated_time" content="2017-09-22T16:15:42.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="日常学习">
+<meta name="twitter:title" content="two_Android性能优化">
+<meta name="twitter:description" content="1、根据UI效果图，能用相对布局搞定的就用相对布局，可以减少多尺寸设备适配工作量。在用到线性布局的情况下，非必要情况慎用layout_weight属性。layout_weight属性会onMesure两次，影响绘制速度。  2、坚持宽而浅原则： 能少用布局嵌套就少用布局嵌套，方便提高布局解析速度。活用&amp;lt;include /&amp;gt;或者&amp;lt;merge /&amp;gt;，使用&amp;lt;include">
 
 
 
@@ -109,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/23/twoPage-Android性能优化/"/>
 
 
 
 
 
-  <title>Categories | 小白学习计划</title>
+  <title>two_Android性能优化 | 小白学习计划</title>
   
 
 
@@ -270,33 +271,161 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/twoPage-Android性能优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiqee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小白学习计划">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">Categories</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">two_Android性能优化</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T00:14:03+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <pre><code> 1、根据UI效果图，能用相对布局搞定的就用相对布局，可以减少多尺寸设备适配工作量。在用到线性布局的情况下，非必要情况慎用layout_weight属性。layout_weight属性会onMesure两次，影响绘制速度。
+
+2、坚持宽而浅原则：
+能少用布局嵌套就少用布局嵌套，方便提高布局解析速度。活用&lt;include /&gt;或者&lt;merge /&gt;，使用&lt;include /&gt;会自动忽略&lt;merge /&gt;这个层级。
+
+3、lint原则：
+使用compound drawables - 一个包含了ImageView与TextView的LinearLayout可以被当作一个compound drawable来处理。
+使用merge根框架 - 如果FramLayout仅仅是一个纯粹的（没有设置背景，间距等）布局根元素，我们可以使用merge标签来当作根标签。
+无用的分支 - 如果一个layout并没有任何子组件，那么可以被移除，这样可以提高效率。
+无用的父控件 - 如果一个layout只有子控件，没有兄弟控件，并且不是一个ScrollView或者根节点，而且没有设置背景，那么我们可以移除这个父控件，直接把子控件提升为父控件】
+深层次的layout - 尽量减少内嵌的层级，考虑使用更多平级的组件 RelativeLayout or GridLayout来提升布局性能，默认最大的深度是10。
+
+4、抽取公共布局或者控件，集成style属性。
+
+5、懒加载View 标记---viewstub
+ViewStub是一个轻量级的view，没有占有空间，没有花费draw的资源，也没有参与在任何一个layout的计算与绘制里面。创建它仅需要很少的系统资源，而且存留在View的层级也是个比较不花费资源的动作。每一个ViewStub简单的包含一个android:layout的属性来指定待创建的布局文件。载用方式：setVisibility(View.VISIBLE) 或者是调用 inflate()。
+
+6、针对listview来说，用viewholder设计模式可以有效减少频繁地findbyId操作，设置tag标记，方便查询。 
+</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/22/onePage-baiduMap/" rel="next" title="百度地图SDK集成android项目*日记">
+                <i class="fa fa-chevron-left"></i> 百度地图SDK集成android项目*日记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
